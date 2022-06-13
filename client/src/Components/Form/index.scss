@@ -1,0 +1,30 @@
+#root {
+  max-width: unset;
+  min-width: unset;
+  margin: 0 auto;
+}
+.form-component {
+  height: 100vh;
+  width: 100%;
+  .flex {
+    display: flex;
+    .secondsection {
+      width: 50%;
+      height: 100vh;
+      background: url(https://imageio.forbes.com/specials-images/imageserve/5fd13efee4ae5f3e20a0d777/Private-jet-flying-past-sun-in-blue-sky/960x0.jpg?format=jpg&width=960)
+        no-repeat;
+      background-size: cover;
+      background-position: 60%;
+    }
+    .firstsection {
+      background-color: #002;
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .agency-formcontroller {
+      }
+    }
+  }
+}

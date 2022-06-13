@@ -1,0 +1,69 @@
+<div class="dashboard__content">
+  <div class="dashboard__header">
+    <h2>Payment Report</h2>
+    <div class="dashboard__content__left ms-3">
+      <div class="input-group dash__search">
+        <input
+          type="text"
+          class="form-control border-left-0"
+          placeholder="19/07/2002"
+          aria-label="Amount (to the nearest dollar)"
+        />
+        <span
+          class="input-group-text border-right-0 bg-primary px-3 text-white ext"
+          ><i class="fa fa-calendar" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div
+        class="sync mx-2 px-3 bg-primary text-center"
+        style="height: 36px !important"
+      >
+        <i class="fa fa-refresh mt-2 text-white" aria-hidden="true"></i>
+      </div>
+      <div
+        class="sync mx-2 px-3 bg-primary text-center"
+        style="height: 36px !important"
+      >
+        <i class="fa fa-signal mt-2 text-white" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <img src="images/fountain.svg" alt="" />
+  <div class="dashboard__table bg-white mt-4">
+    <div style="overflow-x: auto">
+      <table>
+        <tr class="w-100">
+          <th class="">USER</th>
+          <th>PAYMENT REPORT</th>
+          <th>PAYMENT REFERNCE</th>
+          <th>TRANSACTION ID</th>
+          <th>PAYMENT STATUS</th>
+          <th>DATE</th>
+        </tr>
+
+        <tr>
+          <td class="text-primary">
+            <i class="fa fa-user me-2" aria-hidden="true"></i>
+            Aluko Opeyemi
+          </td>
+
+          <td>Paid</td>
+          <td>
+            <div class="ref">
+              <i class="fa fa-money me-2" aria-hidden="true"></i>
+              <span title="Click to copy" id="ref">AT-9456</span>
+            </div>
+          </td>
+          <td>1</td>
+          <td>
+            <span class="succesful">
+              <i class="fa fa-check me-2" aria-hidden="true"></i
+              >Successful</span
+            >
+          </td>
+          <td>10-24-2022</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

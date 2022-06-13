@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title %></title>
+  </head>
+  <style>
+    body {
+      height: 100vh;
+      background: url(../images/background.jpeg) no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h3 {
+      text-align: center;
+      font-size: 50px;
+      color: #002;
+    }
+    form {
+      background: #fff;
+      box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
+      max-height: 70vh;
+      width: 700px;
+      height: 60vh;
+      border-radius: 8px;
+      margin: 10px auto;
+      padding: 40px;
+      padding-top: 80px;
+    }
+    .form-control,
+    .form-control > label,
+    .form-control > input {
+      width: 100%;
+    }
+    .form-control > input {
+      background-color: #002;
+      margin: 20px auto;
+      color: #fff;
+      width: 91%;
+      border-radius: 8px;
+      outline: none;
+      padding: 20px;
+    }
+    input[type="submit"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      outline: none;
+      width: 300px;
+      background-color: green;
+      color: #fff;
+      border: none;
+      padding: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #loading {
+      position: fixed;
+      left: 0px;
+      display: none;
+      top: 0px;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background-color: #ffffffcf;
+    }
+    .body {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100px;
+      top: 200px;
+    }
+  </style>
+  <body>
+    <h3>Make Payment</h3>
+    <form method="POST" action="/make-payment" enctype="multipart/form-data">
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email here"
+          required
+        />
+      </div>
+      <div class="form-control">
+        <label for="full_name">Full Name</label>
+        <input
+          type="text"
+          placeholder="Enter your Full Name"
+          name="name"
+          id="name"
+          required
+        />
+      </div>
+      <div class="form-control">
+        <label for="amount">Amount</label>
+        <input type="text" name="amount" value="50000" readonly />
+      </div>
+      <div class="form-control">
+        <label for="amount">Phone Number</label>
+        <input type="number" name="phone" id="phone" required />
+      </div>
+      <div class="form-control">
+        <input
+          type="submit"
+          id="submit"
+          value="Make Payment"
+          onclick="makePayment()"
+        />
+      </div>
+    </form>
+    <div id="loading">
+      <div class="body">
+        <img
+          src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg"
+          alt="loading"
+          width="100"
+          height="100"
+        />
+        <p>Loading...</p>
+      </div>
+    </div>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script>
+      function makePayment() {
+        FlutterwaveCheckout({
+          public_key: "FLWPUBK_TEST-fe4c090474e4141515a91edf955dac6a-X",
+          tx_ref: `AT-${Math.round(Math.random() * 10000)}`,
+          amount: 50000,
+          currency: "NGN",
+          country: "NG",
+          payment_options: "card",
+
+          // specified redirect URL
+          redirect_url: "http://localhost:8080/",
+
+          // use customer details if user is not logged in, else add user_id to the request
+          customer: {
+            email: email,
+            phone_number: phone,
+            name: username,
+          },
+          callback: function (data) {
+            console.log(data);
+          },
+          onclose: function () {
+            // close modal
+          },
+          customizations: {
+            title: "Travel Agency",
+            description: "Payment for Registration",
+            logo: "https://cdn.iconscout.com/icon/premium/png-256-thumb/payment-2193968-1855546.png",
+          },
+        });
+        // document.getElementById("submit").preventDefault();
+        var username = document.getElementById("name").value;
+        var loader = document.getElementById("loading");
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        if (phone === "" || username === "" || email === "") return false;
+        loader.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,3 +1,10 @@
+import bgImage from "../assets/images/background.jpeg";
+
 export const ROUTES = {
-    REGISTER:"/"
+  REGISTER: "/admin",
+  HOME: "/",
+};
+
+export const IMAGES = {
+  bgImage,
 };

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile</title>
+</head>
+<body>
+    
+</body><!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="Styles/form.css">
+<body>
+
+<div class="flex">
+  <% if(message){%>
+  <div class="messages <%= message %>">
+      <%= message %>
+    </div>
+<%}%>
+
+  <div class="firstSection">
+    <form id="regForm" method="POST" action="/register" enctype="multipart/form-data">
+      <h1>Register:</h1>
+      <!-- One "tab" for each step in the form: -->
+      <div class="tab">Personal Data:
+        <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+        <p><input placeholder="Middle name..." oninput="this.className = ''" name="mname"></p>
+        <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+      </div>
+      <div class="tab">Contact:
+        <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+        <p><input type="number" placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+        <p><input placeholder="Address" oninput="this.className = ''" name="address"></p>
+    
+      </div>
+      <div  class="tab education">Education:
+          <p><select name="educationLevel">
+            <option disabled selected>Highest Educational Degree:</option>
+            <option value="PhD">PhD</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="M.Sc">M.Sc</option>
+            <option value="MBA">MBA</option>
+            <option value="MA">MA</option>
+            <option value="M.Edu">M.Edu</option>
+            <option value="M.Eng">M.Eng</option>
+            <option value="HND">HND</option>
+            <option value="OND">OND</option>
+            <option value="O Level">O Level</option>
+        </select></p>
+        <div class="chose">
+          Suggestive Courses/Programme you want to study in the UK
+         <div class="flex">
+           <span>1</span>
+           <input placeholder="" name="course1" oninput="this.className = ''">
+         </div>
+          <div class="flex">
+            <span>2</span>
+            <input placeholder="" name="course2" oninput="this.className = ''">
+          </div>
+          <div class="flex">
+            <span>3</span>
+            <input placeholder="" name="course3" oninput="this.className = ''">
+          </div>
+         </div>
+          <p><select onchange="showfield(this.options[this.selectedIndex].value)" name="location">
+            <option disabled selected>Choose your location:</option>
+            <option value="London">London</option>
+            <option value="Manchester">Manchester</option>
+            <option value="Newcastle">Newcastle</option>
+            <option value="Liverpool">Liverpool</option>
+            <option value="Middlesbrough">Middlesbrough</option>
+            <option value="Bolton">Bolton</option>
+            <option value="Leister">Leister</option>
+            <option value="Leicester">Leicester</option>
+            <option value="Birmingham">Birmingham</option>
+            <option value="Other">Others( please specify)</option>
+        </select>
+       <input type="checkbox" name="chooseLocationForMe" id="">Choose for me
+    </p>
+        <p><input placeholder="Country you which to study..." oninput="this.className = ''" name="studyCountry"></p>
+      </div>
+      <div class="tab">Passport Detail:
+        <p><input placeholder="Passport No" oninput="this.className = ''" name="passNo" ></p>
+        <p><input placeholder="When Will Your passport expire?" type="text" onfocus="(this.type='date')" oninput="this.className = ''" name="passExpire" min="0"></p>
+    
+      </div>
+      
+      <div class="tab">Birthday:
+        <p><input placeholder="DD/MM/YYYY" oninput="this.className = ''" name="DOB" type="text" onfocus="(this.type='date')"></p>
+        <p><input placeholder="Place of birth..." oninput="this.className = ''" name="POB"></p>
+      </div>
+    
+      <div class="tab">Document:
+        <div class="sect">
+          <div id="uploadBtn-1" class="uploadBtn"  onclick="getFile(1)">Click to upload Your Passport</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-1" type="file" value="upload" name="Passport" onchange="sub(this)"/></div>
+        </div>
+         <div class="sect">
+          <div id="uploadBtn-2" class="uploadBtn"  onclick="getFile(2)">Click to upload Your Degree</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-2" type="file" value="upload" name="Degree" onchange="sub(this)"/></div>
+        </div> <div class="sect">
+          <div id="uploadBtn-3" class="uploadBtn"  onclick="getFile(3)">Click to upload Your Transcript</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-3" type="file" value="upload" name="Transcript" onchange="sub(this)"/></div>
+        </div> 
+        <div class="sect">
+          <div id="uploadBtn-4" class="uploadBtn"  onclick="getFile(4)">Click to upload Your Statement</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-4" type="file" value="upload" name="Statement" onchange="sub(this)"/></div>
+        </div> 
+        <div class="sect">
+          <div id="uploadBtn-5" class="uploadBtn"  onclick="getFile(5)">Click to upload Your CV</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-5" type="file" value="upload" name="CV" onchange="sub(this)"/></div>
+        </div> 
+        <div class="sect">
+          <div id="uploadBtn-6" class="uploadBtn"  onclick="getFile(6)">Click to upload Your marriageCert</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-6" type="file" value="upload" name="marriageCert" onchange="sub(this)"/></div>
+        </div> <div class="sect">
+          <div id="uploadBtn-7" class="uploadBtn"  onclick="getFile(7)">Click to upload Your nursingCert</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-7" type="file" value="upload" name="nursingCert" onchange="sub(this)"/></div>
+        </div> <div class="sect">
+          <div id="uploadBtn-8" class="uploadBtn"  onclick="getFile(8)">Click to upload Your IELT</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-8" type="file" value="upload" name="IELT" onchange="sub(this)"/></div>
+        </div> <div class="sect">
+          <div id="uploadBtn-9" class="uploadBtn"  onclick="getFile(9)">Click to upload Your WAECCert</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-9" type="file" value="upload" name="WAECCert" onchange="sub(this)"/></div>
+        </div> <div class="sect">
+          <div id="uploadBtn-10" class="uploadBtn"  onclick="getFile(10)">Click to upload Your WAECCard</div>
+          <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile-10" type="file" value="upload" name="WAECCard" onchange="sub(this)"/></div>
+          </div>
+      </div>
+    
+      
+        <div class="tab other">Others:
+          <p>Have you ever been refused Visa by the UK?
+            <input oninput="this.className = ''" value="Yes" name="refusedVisa" type="radio" > Yes
+            <input oninput="this.className = ''" value="No" name="refusedVisa" type="radio" > No
+            <textarea class="first" placeholder="If yes, when and why?" name="whenandwhyRefusedVisa" id="" cols="30" rows="10"></textarea>
+            <p>
+              How many years Experience do you have(In figure)?
+              <input placeholder="How many years Experience do you have?" oninput="this.className = ''" name="workExp" type="number" min="0" > 
+            </p>
+    
+           <div class="choose">
+            Choose  three preferred locations  or tick
+           <div class="flex">
+             <span>1</span>
+             <input placeholder="" name="prefLocation1">
+           </div>
+            <div class="flex">
+              <span>2</span>
+              <input placeholder="" name="prefLocation2" >
+            </div>
+            <div class="flex">
+              <span>3</span>
+              <input placeholder="" name="prefLocation3" >
+            </div>
+            <input type="checkbox" name="chooseLocationForMe" id=""> Choose for me
+           </div>
+          </p>
+        </div>
+      <div class="tab">Payment:
+        <button type="button" onClick="makePayment()">Pay Now To Complete the transaction</button>
+        </div>
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+  </div>
+  <div class="secondSection"></div>
+</div>
+
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<script src="server.js"></script>
+
+</body>
+</html>
+
+</html>
