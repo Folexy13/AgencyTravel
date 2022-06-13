@@ -30,6 +30,11 @@ class Routers extends React.PureComponent {
               component={Register}
               {...repeatedProps}
             />
+            <NoAuthRoute
+              path={ROUTES.HOME}
+              component={Register}
+              {...repeatedProps}
+            />
           </Switch>
         </div>
       </Router>
