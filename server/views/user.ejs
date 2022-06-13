@@ -1,0 +1,78 @@
+<div class="dashboard__content">
+  <div class="dashboard__header">
+    <h2>User Management</h2>
+    <div class="dashboard__content__left ms-3">
+      <div class="input-group dash__search">
+        <a href="#">
+          <button type="button" class="btn btn-success btn-lg btn-block">
+            Create User
+          </button></a
+        >
+      </div>
+    </div>
+  </div>
+  <img src="images/fountain.svg" alt="" />
+  <div class="dashboard__table bg-white mt-4">
+    <div>
+      <table>
+        <tr class="w-100">
+          <th class="">ID</th>
+          <th class="">USER</th>
+          <th>EMAIL</th>
+          <th>PHONE</th>
+          <th>PAYMENT STATUS</th>
+          <th>PROFILE</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td class="text-primary">
+            <i class="fa fa-user me-2" aria-hidden="true"></i>
+            Aluko Opeyemi
+          </td>
+
+          <td>abc@gmail.com</td>
+          <td>
+            <div>
+              <i class="fa fa-phone me-2" aria-hidden="true"></i>
+              <span title="Click to copy" id="ref">07067903323</span>
+            </div>
+          </td>
+          <td>
+            <span class="succesful">
+              <i class="fa fa-check me-2" aria-hidden="true"></i>Paid</span
+            >
+          </td>
+          <td style="width: 167px">
+            <div class="btn-group">
+              <button
+                data-toggle="dropdown"
+                class="btn btn-primary btn-xs dropdown-toggle"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="dropdownMenuButton1"
+              >
+                Action <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a href="/edit-user/1" title="Edit user" class="text-success"
+                    ><i class="fa fa-pencil me-2" aria-hidden="true"></i>Edit
+                    User</a
+                  >
+                </li>
+                <li>
+                  <a href="#" title="Remove User" class="text-danger"
+                    ><i class="fa fa-trash me-2" aria-hidden="true"></i> Remove
+                    User</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

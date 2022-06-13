@@ -1,17 +1,16 @@
 require("dotenv").config();
 
-let PayStack = require("paystack-node");
+// let PayStack = require("paystack-node");
 const express = require("express");
-const DB = require("../configs/db");
-const request = require("request");
+// const DB = require("../configs/db");
+// const request = require("request");
 const router = express.Router();
-const pdf = require("../Utils/pdf");
+// const pdf = require("../Utils/pdf");
 const _ = require("lodash");
-const cloudinary = require("../Utils/cloudinary");
-const upload = require("../Utils/multer");
+// const cloudinary = require("../Utils/cloudinary");
+// const upload = require("../Utils/multer");
 const fs = require("fs");
-const { initializePayment, verifyPayment } =
-  require("../Utils/payment")(request);
+// const { initializePayment, verifyPayment } =require("../Utils/payment")(request);
 const imgFile = [
   "Passport",
   "Degree",
@@ -95,63 +94,63 @@ router.get("/user-profle/:id", async (req, res) => {
   );
 });
 
-router.post("/register", upload.any(imgFile), async (req, res) => {
-  const uploader = async (path) => await cloudinary.uploads(path, "Images");
-  if ((req.method = "POST")) {
-    const urls = [];
-    const files = req.files;
-    for (const file of files) {
-      const { path } = file;
-      const newPath = await uploader(path);
-      urls.push(newPath);
-      fs.unlinkSync(path);
-    }
-    const data = {
-      phone: req.body.phone,
-      lname: req.body.lname,
-      fname: req.body.fname,
-      mname: req.body.mname,
-      email: req.body.email,
-      adress: req.body.adress,
-      DOB: req.body.DOB,
-      POB: req.body.POB,
-      location: req.body.location,
-      studyCountry: req.body.studyCountry,
-      passNo: req.body.passNo,
-      passExpire: req.body.passExpire,
-      workExp: req.body.workExp,
-      Other: req.body.Other,
-      whenandwhyRefusedVisa: req.body.whenandwhyRefusedVisa,
-      chooseLocationForMe: req.body.chooseLocationForMe,
-      refusedVisa: req.body.phone,
-      prefLocation1: req.body.prefLocation1,
-      prefLocation2: req.body.prefLocation2,
-      prefLocation3: req.body.prefLocation3,
-      course1: req.body.course1,
-      course2: req.body.course2,
-      course3: req.body.course3,
-      // Passport: urls[0].url,
-      // Degree: urls[1].url,
-      // Transcript: urls[2].url,
-      // Statement: urls[3].url,
-      // CV: urls[4].url,
-      // marriageCert: urls[5].url,
-      // nursingCert: urls[6].url,
-      // IELT: urls[7].url,
-      // WAECCert: urls[8].url,
-      // WAECCard: urls[9].url,
-    };
-    await DB.users.create(data);
-    res.status(200).json({
-      messages: "Upload successfully",
-      data: data,
-    });
-  } else {
-    res.status(405).json({
-      err: `${req.method} method not allowed`,
-    });
-  }
-});
+// router.post("/register", upload.any(imgFile), async (req, res) => {
+//   const uploader = async (path) => await cloudinary.uploads(path, "Images");
+//   if ((req.method = "POST")) {
+//     const urls = [];
+//     const files = req.files;
+//     for (const file of files) {
+//       const { path } = file;
+//       const newPath = await uploader(path);
+//       urls.push(newPath);
+//       fs.unlinkSync(path);
+//     }
+//     const data = {
+//       phone: req.body.phone,
+//       lname: req.body.lname,
+//       fname: req.body.fname,
+//       mname: req.body.mname,
+//       email: req.body.email,
+//       adress: req.body.adress,
+//       DOB: req.body.DOB,
+//       POB: req.body.POB,
+//       location: req.body.location,
+//       studyCountry: req.body.studyCountry,
+//       passNo: req.body.passNo,
+//       passExpire: req.body.passExpire,
+//       workExp: req.body.workExp,
+//       Other: req.body.Other,
+//       whenandwhyRefusedVisa: req.body.whenandwhyRefusedVisa,
+//       chooseLocationForMe: req.body.chooseLocationForMe,
+//       refusedVisa: req.body.phone,
+//       prefLocation1: req.body.prefLocation1,
+//       prefLocation2: req.body.prefLocation2,
+//       prefLocation3: req.body.prefLocation3,
+//       course1: req.body.course1,
+//       course2: req.body.course2,
+//       course3: req.body.course3,
+//       // Passport: urls[0].url,
+//       // Degree: urls[1].url,
+//       // Transcript: urls[2].url,
+//       // Statement: urls[3].url,
+//       // CV: urls[4].url,
+//       // marriageCert: urls[5].url,
+//       // nursingCert: urls[6].url,
+//       // IELT: urls[7].url,
+//       // WAECCert: urls[8].url,
+//       // WAECCard: urls[9].url,
+//     };
+//     await DB.users.create(data);
+//     res.status(200).json({
+//       messages: "Upload successfully",
+//       data: data,
+//     });
+//   } else {
+//     res.status(405).json({
+//       err: `${req.method} method not allowed`,
+//     });
+//   }
+// });
 
 router.post("/make-payment", async (req, res) => {
   console.log(req);
