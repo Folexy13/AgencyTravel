@@ -1,0 +1,32 @@
+.dashboard-sidebar {
+    .logo {
+        width: 80px;
+        height: 80px;
+        background-color: red;
+        margin: auto;
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .sidebar-content {
+        // background-color: red;
+        height: 80%;
+        h6 {
+            font-style: normal;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        div {
+            h5 {
+                font-style: normal;
+                font-size: 15px;
+                font-weight: 700;
+                margin-bottom: 30px;
+            }
+        }
+        .logout {
+            margin-top: 80%;
+        }
+    }
+}

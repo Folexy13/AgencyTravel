@@ -4,8 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "client": "npm start --prefix client",
     "server": "nodemon backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
