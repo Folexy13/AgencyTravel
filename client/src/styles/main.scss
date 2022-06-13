@@ -1,0 +1,13 @@
+@import "./variables";
+@import "./config";
+@font-face {
+    font-family: "Aristotelica Display Trial";
+    src: local("Aristotelica Display Trial"),url("../font/aristotelica-display-trial-cufonfonts-webfont/Aristotelica\ Display\ DemiBold\ Trial.woff");
+    font-weight: 600;
+}
+#root{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow: hidden !important;
+}

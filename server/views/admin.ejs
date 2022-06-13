@@ -1,0 +1,74 @@
+                <div class="dashboard__content">
+                    <div class="dashboard__header">
+                        <h2>User Applications</h2>
+                        <div class="dashboard__content__left ms-3">
+                            <div class="input-group dash__search">
+                                <input type="text" class="form-control border-left-0" placeholder="19/07/2002" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-text border-right-0 bg-primary px-3 text-white ext"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                            </div>
+                            <div class="sync mx-2 px-3 bg-primary text-center" style="height: 36px !important;">
+                                <i class="fa fa-refresh mt-2 text-white" aria-hidden="true"></i>
+                            </div>
+                            <div class="sync mx-2 px-3 bg-primary text-center" style="height: 36px !important;">
+                                <i class="fa fa-signal mt-2 text-white" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="images/fountain.svg" alt="">
+                    <div class="dashboard__table bg-white mt-4">
+                        <div style="overflow-x:auto;">
+                            
+                              <% if(users.length>0){%>
+                            <table >
+                              
+                              <tr class="w-100">
+                                <th class="">USER</th>
+                                <th>EMAIL</th>
+                                <th>PHONE</th>
+                                <th>PASSPORT NO</th>
+                                <th>PAYMENT STATUS</th>
+                                <th>DETAILS</th>
+                                <th></th>
+                                   
+                              </tr>
+                                   <% for (var i =0; i <users.length;  i++) { %>
+                                <tr>
+                                    <td class="text-primary">
+                                        <i class="fa fa-user me-2" aria-hidden="true"></i>
+                                        <%= users[i]?.fname%>
+                                        <%= users[i]?.lname%>
+                                    <td>
+                                        <!-- <i class="fa fa-th" aria-hidden="true"></i> -->
+                                        <%= users[i]?.email %>
+                                    </td>
+                                    <td><div><i class="fa fa-phone me-2" aria-hidden="true"></i><%= users[i]?.phone %></div></td>
+                                    <td><%= users[i]?.passNo%></td>
+                                    <td> <span class="status pending">Pending</span></td>
+                                    <td><a href="/list-of-users?user_id=<%=users.id%>">View details</a></td>
+                                    <td><a href="https://res.cloudinary.com/folajimidev/image/upload/fl_attachment:AGENCY-TRAVEL/v1654609111/Images/zna0q9f004qpej6htmpf.png" download=""><i class="fa fa-download me-2" aria-hidden="true"></i>Download Documents</a></td>
+                                </tr>
+                              <% } %>
+                             
+                            </table>
+                            <%}else {%>
+                                <table>
+                                    <tr class="w-100">
+                                <th class="">USER</th>
+                                <th>EMAIL</th>
+                                <th>PHONE</th>
+                                <th>PASSPORT NO</th>
+                                <th>PAYMENT STATUS</th>
+                                <th>DETAILS</th>
+                                <th></th>
+                                   
+                              </tr>
+                                </table>
+                                <div class="none">
+                                No User available
+                                </div>
+                            <%}%>
+                          </div>
+                          
+                          
+                    </div>
+                </div>
