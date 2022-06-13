@@ -1,3 +1,5 @@
-import Register from "./Register";
+import Register from "./Admin/Register";
+import Dashboard from './Admin/Dashboard'
+import Applications from './Admin/Applications'
 
-export { Register };
+export { Register,Dashboard,Applications };

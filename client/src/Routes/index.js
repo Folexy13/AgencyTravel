@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Register } from "../Pages";
+import { Applications, Dashboard, Register } from "../Pages";
 import { ROUTES } from "../Constants";
 import LayoutWrapper from "./LayoutWrapper";
 
@@ -31,8 +31,13 @@ class Routers extends React.PureComponent {
               {...repeatedProps}
             />
             <NoAuthRoute
-              path={ROUTES.HOME}
-              component={Register}
+              path={ROUTES.DASHBAORD}
+              component={Dashboard}
+              {...repeatedProps}
+            />
+             <NoAuthRoute
+              path={ROUTES.APPLICATIONS}
+              component={Applications}
               {...repeatedProps}
             />
           </Switch>

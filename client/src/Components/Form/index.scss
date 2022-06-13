@@ -1,3 +1,7 @@
+:root {
+  --color: #002;
+}
+
 #root {
   max-width: unset;
   min-width: unset;
@@ -24,7 +28,65 @@
       justify-content: center;
       align-items: center;
       .agency-formcontroller {
+        width: 80%;
+        background-color: #fff;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px;
+        .form-container {
+          padding: 40px;
+          h2 {
+            text-align: center;
+          }
+          .form-content {
+            margin-top: 20px;
+            .passField {
+              width: 100%;
+              position: relative;
+              .eye {
+                position: absolute;
+                top: 20%;
+                right: 10px;
+                cursor: pointer;
+              }
+            }
+            input {
+              width: 100%;
+              padding-bottom: 15px;
+              border: none;
+              background-color: inherit;
+              border-radius: 0;
+              border-bottom: 2px solid var(--color);
+              margin-bottom: 20px;
+              display: block;
+            }
+            button {
+              margin-top: 20px;
+              padding: 10px 20px;
+              background-color: var(--color);
+              border: none;
+              color: #fff;
+
+            }
+            ::placeholder {
+              color: var(--color) !important;
+              opacity: 1;
+            }
+          }
+        }
       }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .form-component {
+    .secondsection {
+      display: none !important;
+    }
+    .firstsection {
+      width: 100% !important;
     }
   }
 }
