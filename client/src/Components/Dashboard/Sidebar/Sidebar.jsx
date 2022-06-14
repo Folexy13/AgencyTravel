@@ -11,8 +11,9 @@ import {
   Speedometer,
 } from "react-bootstrap-icons";
 
-export const Sidebar = () => {
+export const Sidebar = ({ sTitle, ...props }) => {
   const [active, setActive] = useState(false);
+
   return (
     <div className="dashboard-sidebar h-100">
       <div className="logo mb-5">

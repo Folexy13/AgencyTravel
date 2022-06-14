@@ -1,6 +1,48 @@
+.row > * {
+  padding-left: 0;
+} //Countering bootstrap styles
 .dashboard {
-    height: 100vh;
-    .sidebar__col {
-        background-color: navy;
+  height: 100vh;
+  .sidebar__col {
+    background-color: navy;
+  }
+  .main__header {
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    .harmburger {
+      pointer-events: none;
+      font-size: 30px !important;
+      cursor: pointer;
     }
+    .main__search input {
+      border-left: 0 !important;
+      background-color: rgba(0, 0, 0, 0.07);
+      width: 20% !important;
+    }
+  }
+  .submit {
+    /* width: 50px; */
+    outline: none;
+  }
+  .search__icon {
+    display: none;
+  }
+  .avatar__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .avatar {
+    /* vertical-align: middle; */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .avatar__text h5 {
+    font-size: 12px;
+  }
+  .avatar__text small {
+    font-size: 12px;
+  }
 }
