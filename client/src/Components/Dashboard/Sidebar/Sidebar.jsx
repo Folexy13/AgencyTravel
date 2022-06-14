@@ -45,7 +45,9 @@ export const Sidebar = () => {
           </div>
           <div className="logout ms-3">
             <h5 className="text-danger d-flex align-items-center">
-              <BoxArrowLeft className="me-2" /> LOGOUT
+              <a href="/" className="text-decoration-none text-danger">
+                <BoxArrowLeft className="me-2" /> LOGOUT
+              </a>
             </h5>
           </div>
         </Container>
