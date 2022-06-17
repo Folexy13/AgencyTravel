@@ -46,3 +46,32 @@
     font-size: 12px;
   }
 }
+
+
+// RESPONSIVE STYLING
+@media (max-width: 992px) {
+    .dashboard {
+        .sidebar__col {
+            display: none;
+        }
+        .mainCol {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 991.5px) {
+    .harmburger {
+        cursor:  pointer !important;
+        pointer-events: unset !important;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .main__header {
+        .main__search {
+            display: none !important;
+        }
+    }
+}

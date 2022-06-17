@@ -12,7 +12,7 @@ export const DashboardView = (props) => {
         <Col lg={2} className="sidebar__col">
           <Sidebar />
         </Col>
-        <Col lg={10}>
+        <Col lg={10} className='mainCol'>
           <div class="main__header shadow">
             <div class="main__left d-flex gap-4 align-items-center">
               <List className="me-2 harmburger" />
